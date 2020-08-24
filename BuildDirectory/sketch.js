@@ -68,7 +68,7 @@ function drawBoard() {
   }
   let i = 0;
   while (i < currentBoard.length) {
-    imgDict['img' + i].position((decidedSize / boardSize * (currentBoard[i][0] + 0.131)), (decidedSize / boardSize * (currentBoard[i][1] + 0.131)));
+    imgDict['img' + i].position((decidedSize / boardSize * (currentBoard[i][0] + 0.135)), (decidedSize / boardSize * (currentBoard[i][1] + 0.135)));
     i++
   }
   while (i < numQueens) {
