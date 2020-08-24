@@ -78,7 +78,7 @@ function drawBoard() {
   tickCount++
 }
 
-let numQueens = prompt('How many queens do you want');
+let numQueens = Number(prompt('How many queens do you want'));
 let boardSize = numQueens;
 let frameRate = 20;
 let boards = nQueens(numQueens, boardSize)[1];
