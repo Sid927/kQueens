@@ -63,33 +63,34 @@ function drawBoard() {
           fill(255);
         }
       }
-      rect((800 / boardSize * j), (800 / boardSize * i), (800 / boardSize), (800 / boardSize))
+      rect((decidedSize / boardSize * j), (decidedSize / boardSize * i), (decidedSize / boardSize), (decidedSize / boardSize))
     }
   }
   let i = 0;
   while (i < currentBoard.length) {
-    imgDict['img' + i].position((800 / boardSize * (currentBoard[i][0] + 0.125)), (800 / boardSize * (currentBoard[i][1] + 0.125)));
+    imgDict['img' + i].position((decidedSize / boardSize * (currentBoard[i][0] + 0.125)), (decidedSize / boardSize * (currentBoard[i][1] + 0.125)));
     i++
   }
   while (i < numQueens) {
-    imgDict['img' + i].position(900, 900);
+    imgDict['img' + i].position(window.innerWidth + 100, window.innerHeight + 100);
     i++
   }
   tickCount++
 }
 
-let numQueens = 8;
-let boardSize = 8;
+let numQueens = prompt('How many queens do you want');
+let boardSize = numQueens;
 let frameRate = 20;
 let boards = nQueens(numQueens, boardSize)[1];
 let board = nQueens(numQueens, boardSize)[0];
 let imgDict = {};
 let tickCount = 0;
+let decidedSize = window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth;
 
 console.log(board)
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(window.innerWidth, window.innerHeight);
   for (let i in board) {
     imgDict['img' + i] = createImg('https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Chess_qdt45.svg/1200px-Chess_qdt45.svg.png', 'Queen'); 
     imgDict['img' + i].size((75 * 8/numQueens), (75 * 8/numQueens));
