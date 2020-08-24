@@ -80,7 +80,7 @@ function drawBoard() {
 
 let numQueens = Number(prompt('How many queens do you want'));
 let boardSize = numQueens;
-let frameRate = 20;
+let frameRate = numQueens / 2;
 let boards = nQueens(numQueens, boardSize)[1];
 let board = nQueens(numQueens, boardSize)[0];
 let imgDict = {};
